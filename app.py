@@ -17,7 +17,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Define a generic color palette
+# Define a color palette
 APP_COLORS = {
     'primary': '#004977',  # Dark Blue
     'secondary': '#D03027',  # Red
@@ -28,11 +28,11 @@ APP_COLORS = {
     'text': '#212121'      # Dark Grey
 }
 
-# ─── AI + MODEL UTILS ──────────────────────────────────────────────────────────
+# AI + MODEL UTILS
 import json, joblib, google.generativeai as genai
 
-# Directly embed the API key in the code as requested
-GEMINI_API_KEY = "AIzaSyDZn-6LZqxkkssrNUpfr0RIX2mLyqCobus"
+
+GEMINI_API_KEY = "YOUR_API_KEY"
 genai.configure(api_key=GEMINI_API_KEY)
 gemini_model = genai.GenerativeModel("gemini-2.0-flash")
 
@@ -257,13 +257,13 @@ selected_page = st.sidebar.radio("Go to", pages)
 
 # Introduction page
 if selected_page == "Introduction":
-    st.markdown("<h1 class='main-header'>Credit Card Churn Insights App</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 class='main-header'>Credit Card Churn Prediction App</h1>", unsafe_allow_html=True)
     
     col1, col2 = st.columns([2, 1])
     
     with col1:
         st.markdown("<div class='info-box'>", unsafe_allow_html=True)
-        st.markdown("### Welcome to the Credit Card Churn Insights App")
+        st.markdown("### Welcome to the Credit Card Churn Prediction App")
         st.markdown("""
         This interactive application demonstrates how data science and artificial intelligence 
         can help identify and retain customers who are at risk of closing their credit card accounts.
@@ -1431,4 +1431,4 @@ elif selected_page == "Technologies Used":
     st.markdown("</div>", unsafe_allow_html=True)
 
 # Footer
-st.markdown("<div class='footer'> 2025 Credit Card Churn Insights App | Created By Ali Hasan</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'> 2025 Credit Card Churn Prediction App | Created By Ali Hasan</div>", unsafe_allow_html=True)
