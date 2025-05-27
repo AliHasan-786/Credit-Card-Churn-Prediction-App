@@ -32,7 +32,7 @@ APP_COLORS = {
 import json, joblib, google.generativeai as genai
 
 
-GEMINI_API_KEY = "YOUR_API_KEY"
+GEMINI_API_KEY = st.secrets["gemini"]["api_key"]
 genai.configure(api_key=GEMINI_API_KEY)
 gemini_model = genai.GenerativeModel("gemini-2.0-flash")
 
